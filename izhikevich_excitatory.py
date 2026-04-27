@@ -57,7 +57,7 @@ if __name__ == "__main__":
 
     I_fn = lambda t: 10  # Setting current to constant
 
-    # Call the ihikevich model and input parameters we set for each type of behavior
+    # Call the Ihikevich model and input parameters we set for each type of behavior
     t_rs, v_rs, u_rs, I_rs = izhikevich_sim(**rs_params, I_fn=I_fn)
     t_ib, v_ib, u_ib, I_ib = izhikevich_sim(**ib_params, I_fn=I_fn)
     t_ch, v_ch, u_ch, I_ch = izhikevich_sim(**ch_params, I_fn=I_fn)
@@ -91,7 +91,7 @@ v_min, v_max = np.min(v_ch), np.max(v_ch)
 theta_ch = 2*np.pi * (v_ch - v_min) / (v_max - v_min) 
 x_ch, y_ch = np.cos(theta_ch), np.sin(theta_ch)
 
-# Create unit circule
+# Create unit circle
 plt.figure(figsize=(5,5))
 circle = np.linspace(0, 2*np.pi, 200)
 plt.plot(np.cos(circle), np.sin(circle), 'k--') 
